@@ -1,0 +1,262 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing:; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root{
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 96.5vh;
+    color: var(--colorLight2);
+    background-image: url(./images/weather-bg.png);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 1.6rem;
+}
+
+.wrapper h1{
+    text-transform: uppercase;
+}
+
+.tab-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 10rem;
+    margin: 3rem 5rem;
+}
+
+.tab{
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    padding: .6rem;
+    transition: .2s ease-in-out;
+
+}
+
+.tab.current-tab{
+    width: auto;
+    background: #ffffffc1;
+    border-radius: 20px;
+    color: var(--colorDark1);
+    font-weight: 600;
+    box-shadow: 0 0 2px 5px #f4f5f76d;
+}
+
+.grant-location-container{
+    text-align: center;
+    display: none;
+}
+
+.grant-location-container h3{
+    font-size: 1.7rem;
+    margin: 2rem 0 0 0;
+}
+
+.grant-location-container img{
+    border-radius: 50%;
+}
+
+.grant-location-container.active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grant-location-container .btn{
+    background: #6dcc00;
+    color: var(--colorDark1);
+    border: none;
+    outline: none;
+    padding: .5rem 1.4rem;
+    margin: 2rem 0rem 1rem 0rem;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: .3s ease-in-out;
+}
+
+.grant-location-container .btn:hover{
+    scale: 1.03;
+    box-shadow: 0 0 2px 3px #ccff02d8;
+}
+
+.parameter-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    border-radius: 50px;
+    background: #ffffff38;
+    padding: 1rem 2rem;
+}
+
+.parameter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parameter h4{
+    margin-top: 1rem;
+}
+
+.parameter p{
+    margin-top: .5rem;
+    text-transform: lowercase;
+}
+
+.loading-container{
+    display: none;
+}
+
+.loading-container.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loading-container p{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.user-info-container{
+    display: none;
+    text-align: center;
+}
+
+.user-info-container.active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-info-container h3{
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+}
+
+.user-info-container .weatherIcon{
+    width: 100px;
+    height: 100px;    
+}
+
+.about-weather{
+    width: 180px;
+    flex-direction: column;
+    align-items: center;
+    background: #e59d9d3e;
+    border-radius: 30%;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.about-weather.active{
+    display: flex;
+}
+
+.name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.name img{
+    width: 50px;
+    height: 30px;
+    /* border-radius: 50%; */
+}
+
+.name p{
+    font-size: 2rem;
+}
+
+.form-container{
+    display: none;
+    /* text-align: center; */
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px;
+    margin-bottom: 1.5rem;
+}
+
+.form-container.active{
+    display: flex;
+}
+
+.form-container input{
+    width: calc(100% - 80px);
+    border: none;
+    background: var(--colorDark2);
+    border-radius: 30px;
+    padding: 1rem 1rem;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 400px;
+}
+
+.form-container input::placeholder{
+    color: #a6a5a5;
+}
+
+.form-container .btn{
+    background: #1ea603;
+    border: none;
+    width: 50px;
+    height: 46px;
+    border-radius: 50%;
+    outline: none;
+    transition: .3s ease-in-out;
+}
+
+.form-container .btn:hover{
+    cursor: pointer;
+    scale: 1.03;
+    background: #5555f6;
+}
+
+@media  (max-width: 768px) {
+    .wrapper{
+        height: 100%;
+        min-height: 150vw;
+        padding-bottom: 3rem;
+    }
+    
+    .parameter-container{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 5rem;
+        gap: 4rem;
+    }
+
+    .form-container{
+        padding: 0 3rem;
+        width: 60%;
+        min-width: 100px;
+    }
+
+    .form-container .btn{
+        width: 65px;
+        height: 50px;
+    }
+}
